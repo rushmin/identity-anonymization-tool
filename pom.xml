@@ -48,8 +48,10 @@
         <module>components/org.wso2.carbon.privacy.forgetme.logs</module>
         <module>components/org.wso2.carbon.privacy.forgetme.log-statements-scanner</module>
         <module>components/org.wso2.carbon.privacy.forgetme.analytics.streams</module>
+        <module>components/org.wso2.carbon.privacy.forgetme.userstore</module>
         <module>components/org.wso2.carbon.privacy.forgetme.batch-execute</module>
         <module>components/org.wso2.carbon.privacy.forgetme.tool</module>
+        <module>components/org.wso2.carbon.privacy.forgetme.rest</module>
     </modules>
 
     <repositories>
@@ -151,6 +153,11 @@
                 <version>${carbon.datasource.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.user.core</artifactId>
+                <version>${carbon.kernel.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.h2database.wso2</groupId>
                 <artifactId>h2-database-engine</artifactId>
                 <version>${com.h2database.wso2.version}</version>
@@ -200,6 +207,33 @@
                 <version>${org.testng.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.msf4j</groupId>
+                <artifactId>msf4j-core</artifactId>
+                <version>${msf4j.vershon}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.wso2.eclipse.osgi</groupId>
+                        <artifactId>org.eclipse.osgi</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.wso2.eclipse.osgi</groupId>
+                        <artifactId>org.eclipse.osgi.services</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.wso2.carbon</groupId>
+                        <artifactId>org.wso2.carbon.launcher</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.google.code.findbugs</groupId>
+                        <artifactId>jsr305</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-pool</groupId>
+                        <artifactId>commons-pool</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -210,6 +244,9 @@
         <java.target.version>1.8</java.target.version>
 
         <carbon.datasource.version>1.0.2</carbon.datasource.version>
+
+        <msf4j.vershon>2.6.2</msf4j.vershon>
+
         <com.h2database.wso2.version>1.2.140.wso2v3</com.h2database.wso2.version>
 
         <commons.lang.version>2.6</commons.lang.version>

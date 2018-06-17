@@ -1,0 +1,24 @@
+
+DESCRIPTION:
+
+    Starts the ForgetMe API server.
+
+USAGE:
+
+    start-api-server.sh [-help] [-p <port>] -d <config-directory>
+
+OPTIONS:
+
+    -help
+        Shows this message and exists.
+
+    -p <port>
+
+        The port which the server should listen to.
+
+        Default port : 8000
+
+    -d <config-home-directory>
+
+        The directory which contains the configs for the tool.
+
